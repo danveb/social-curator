@@ -26,6 +26,18 @@ button {
   }
 }
 
+@keyframes fade-in-from-left {
+  0% {
+    opacity: 0; 
+    transform: translateX(-50px); 
+  }
+
+  100% {
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
 /* global */
 .app {
   font-family: "Lato", sans-serif; 
@@ -126,6 +138,78 @@ button {
 .sidebar {
   background-color: #10171a; 
   width: 75px; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.menu {
+
+}
+
+.menu__button {
+  padding: 19px 0; 
+  color: rgba(255, 255, 255, 0.5); 
+  width: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; /* to center horizontally when direction is column */ 
+  gap: 5px; 
+  transition: all 0.3s ease-in; 
+  animation: fade-in-from-left 0.5s; 
+}
+
+.menu__button:hover {
+  background-color: #2b363b;
+  color: #fff; 
+  cursor: pointer; 
+}
+
+.menu__button:focus {
+  background-color: #2b363b;
+  color: #fff; 
+  cursor: pointer; 
+}
+
+
+.menu__button--active {
+  /* modifier class */ 
+  background-color: #2b363b; 
+  color: #fff; 
+  position: relative; 
+}
+
+/* creates a html element with css */ 
+/* "before" is when this comes before child elements */ 
+.menu__button--active::before {
+  content: ""; 
+  width: 3px; 
+  height: 100%; 
+  background-color: #375bb6; 
+  position: absolute;  
+  top: 0;
+  left: 0; 
+}
+
+.menu__icon {
+  font-size: 14px; 
+  margin-bottom: 3px; 
+}
+
+.menu__text {
+  font-weight: 500; 
+  font-size: 12px; 
+}
+
+.footer {
+  margin-top: auto; /* take all space between footer and menu */ 
+  margin-bottom: 50px; 
+  transform: rotate(-90deg); 
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.15); 
+  font-size: 12px; 
+  white-space: nowrap; 
 }
 
 /* ------------------------------ */ 
