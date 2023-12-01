@@ -35,6 +35,11 @@ button {
   width: 100dvw; 
 }
 
+.app__container {
+  height: calc(100dvh - 55px); 
+  display: flex; 
+}
+
 /* header */ 
 .header {
   background-image: linear-gradient(to right, #622db9, #18a0be); 
@@ -114,4 +119,25 @@ button {
   .dd-toggle:last-child {
     margin-left: auto; 
   }
+}
+
+/* ------------------------------ */ 
+
+.sidebar {
+  background-color: #10171a; 
+  width: 75px; 
+}
+
+/* ------------------------------ */ 
+
+.panel {
+  background-color: #2b363c; 
+  width: 350px; 
+}
+
+/* ------------------------------ */ 
+
+.main {
+  background-color: #edf1f3; 
+  flex: 1; /* take all available space after fixed widths on sidebar/panel */ 
 }
