@@ -1,0 +1,117 @@
+/* reset universally */ 
+* {
+  box-sizing: content-box; 
+  padding: 0; 
+  margin: 0; 
+}
+
+button {
+  border: initial; /* before browser adds any styles */ 
+  background-color: initial; 
+  font-family: inherit; /* inherit from global styles */ 
+  color: inherit; 
+  outline: none; /* Make sure there is a visual indicator for focus state */ 
+}
+
+/* keyframes */ 
+@keyframes fade-in-from-top {
+  0% {
+    opacity: 0; 
+    transform: translateY(-50px); 
+  }
+
+  100% {
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* global */
+.app {
+  font-family: "Lato", sans-serif; 
+  font-size: 15px; 
+  color: #fff; 
+  height: 100dvh; 
+  width: 100dvw; 
+}
+
+/* header */ 
+.header {
+  background-image: linear-gradient(to right, #622db9, #18a0be); 
+  height: 55px; 
+  display: flex; 
+}
+
+.logo {
+  font-size: 20px; 
+  color: #fff; 
+  align-self: center; 
+  margin-left: 16px; 
+  margin-right: 16px; 
+  animation: fade-in-from-top 0.5s; 
+}
+
+.dd-toggle {
+  color: rgba(255, 255, 255, 0.7); 
+  padding: 0 13px; 
+  cursor: pointer; 
+  transition: all 0.4s ease-out; /* color, background-color transition */ 
+  animation: fade-in-from-top 0.5s; 
+}
+
+.dd-toggle:hover {
+  color: #fff; 
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.dd-toggle:focus {
+  color: #fff; 
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.dd-toggle:nth-of-type(4) {
+  margin-left: auto; 
+}
+
+.dd-toggle:last-child {
+  display: flex; 
+  align-items: center; 
+}
+
+.dd-toggle__icon {
+  /* pending */
+}
+
+.dd-toggle__img {
+  width: 30px; 
+  height: 30px;
+  object-fit: cover; 
+  border-radius: 50%; 
+  margin-right: 7px; 
+}
+
+.dd-toggle__text {
+  font-size: 12px; 
+}
+
+@media screen and (max-width: 640px) {
+  .dd-toggle {
+    padding: 0 10px; 
+    font-size: 12px; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dd-toggle__text {
+    display: none; 
+  }
+
+  .dd-toggle:nth-of-type(4),
+  .dd-toggle:nth-of-type(5) {
+    display: none; 
+  }
+
+  .dd-toggle:last-child {
+    margin-left: auto; 
+  }
+}
