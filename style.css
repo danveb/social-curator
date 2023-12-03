@@ -130,7 +130,7 @@ button {
 }
 
 .dd-toggle__icon {
-  /* pending */
+  font-size: 14px; 
 }
 
 .dd-toggle__img {
@@ -145,28 +145,6 @@ button {
   font-size: 12px; 
 }
 
-@media screen and (max-width: 640px) {
-  .dd-toggle {
-    padding: 0 10px; 
-    font-size: 12px; 
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .dd-toggle__text {
-    display: none; 
-  }
-
-  .dd-toggle:nth-of-type(4),
-  .dd-toggle:nth-of-type(5) {
-    display: none; 
-  }
-
-  .dd-toggle:last-child {
-    margin-left: auto; 
-  }
-}
-
 /* ------------------------------ */ 
 
 .sidebar {
@@ -177,7 +155,7 @@ button {
 }
 
 .menu {
-
+  height: initial; 
 }
 
 .menu__button {
@@ -488,5 +466,125 @@ button {
 }
 
 .tool__icon {
-  
+  font-size: 12px;
+}
+
+/* media queries */ 
+
+@media (max-width: 1200px) {
+  .panel {
+    display: none; 
+  } 
+
+  .canvas {
+    width: 75dvw; 
+  }
+}
+
+@media (max-width: 1000px) {
+  .app__container {
+    height: initial; 
+    min-height: calc(100dvh - 55px); 
+  }
+
+  .sidebar {
+    display: none; 
+  }
+
+  .info-bar {
+    padding: 0 20px; 
+  }
+
+  .artboard {
+    padding: 50px 20px; 
+    margin-top: 0; 
+    height: initial; 
+  }
+
+  .canvas {
+    width: 100%; 
+    height: 500px; /* fixed height so it's not dependent on vh */
+  }
+
+  .tools {
+    height: 500px; /* fixed height so it's not dependent on vh */
+  }
+}
+
+
+@media (max-width: 640px) {
+  .dd-toggle {
+    padding: 0 10px; 
+    font-size: 12px; 
+  }
+
+  .artboard {
+    flex-direction: column; 
+  }
+
+  .canvas {
+    order: 2; 
+    height: 450px; 
+  }
+
+  .canvas__circle:nth-of-type(1){
+    top: 11.5%; 
+    left: 9.8%; 
+  }
+
+  .canvas__circle:nth-of-type(2){
+    top: 11.5%; 
+    right: 9.8%; 
+  }
+
+  .canvas__circle:nth-of-type(3){
+    bottom: 11.5%; 
+    right: 9.8%; 
+  }
+
+  .canvas__circle:nth-of-type(4){
+    bottom: 11.5%; 
+    left: 9.8%; 
+  }
+
+  .tools {
+    flex-direction: row; 
+    column-gap: 5px; 
+    order: 1; 
+    height: initial; 
+    margin-bottom: 15px; 
+    align-self: start; 
+  }
+
+  .tool:last-child {
+    margin: 0; 
+  }
+}
+
+@media (max-width: 480px) {
+  .dd-toggle {
+    display: none; 
+  }
+
+  .dd-toggle__text {
+    display: none; 
+  }
+
+  .dd-toggle:nth-of-type(4),
+  .dd-toggle:nth-of-type(5) {
+    display: none; 
+  }
+
+  .dd-toggle:last-child {
+    margin-left: auto; 
+  }
+
+  .breadcrumbs__link,
+  .breadcrumbs__icon {
+    display: none; 
+  }
+
+  .canvas {
+    height: 400px; 
+  }
 }
